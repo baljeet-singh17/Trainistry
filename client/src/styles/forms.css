@@ -1,0 +1,93 @@
+/* =========================================================
+   FORMS – Premium Pastel Glass Version
+   ========================================================= */
+
+/* Outer Container */
+.form-wrapper {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 50px;
+  max-width: 650px;
+  margin: 4rem auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 35px;
+  letter-spacing: -0.5px;
+}
+
+/* Group */
+.form-group {
+  margin-bottom: 22px;
+}
+
+/* Labels */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+/* Input & Textarea Base */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s ease;
+}
+
+/* Placeholder */
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9CA3AF;
+}
+
+/* Focus State – This makes it premium */
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.15);
+}
+
+/* Textarea specific */
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Two-column layout */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Submit Button Alignment */
+.form-actions {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Optional subtle divider */
+.form-divider {
+  margin: 35px 0;
+  height: 1px;
+  background: var(--border-soft);
+}
