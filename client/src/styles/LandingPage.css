@@ -1,0 +1,345 @@
+/* =========================================================
+   1️⃣ ROOT COLOR SYSTEM (Pastel + Premium Palette)
+   ========================================================= */
+
+:root {
+  --primary: #A78BFA;
+  --primary-deep: #7C3AED;
+  --cyan-soft: #67E8F9;
+  --pink-soft: #F9A8D4;
+
+  --text-main: #1F1F2E;
+  --text-muted: #6B7280;
+
+  --bg-main: #F6F7FB;
+  --glass: rgba(255, 255, 255, 0.65);
+  --border-soft: rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   2️⃣ GLOBAL STYLES + SOFT BACKGROUND BLOBS
+   ========================================================= */
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+}
+
+body::before {
+  background: #E9D5FF;
+  top: -150px;
+  left: -150px;
+}
+
+body::after {
+  background: #C7D2FE;
+  bottom: -200px;
+  right: -150px;
+}
+
+
+/* =========================================================
+   3️⃣ NAVBAR (Glass Effect + Sticky)
+   ========================================================= */
+
+.navbar {
+  height: 80px;
+  padding: 0 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-actions button {
+  margin-left: 20px; /* space between Login & Get Started */
+}
+
+
+/* =========================================================
+   4️⃣ BUTTON SYSTEM (Modern Floating Style)
+   ========================================================= */
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(124, 58, 237, 0.35);
+}
+
+.secondary-btn {
+  background: white;
+  border: 1px solid #E5E7EB;
+  color: var(--text-main);
+  padding: 12px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.secondary-btn:hover {
+  background: #F3F4F6;
+}
+
+.large {
+  padding: 15px 34px;
+  font-size: 16px;
+}
+
+/* ✅ Login Button Style */
+.login-btn {
+  background: transparent;
+  border: 1px solid #E5E7EB;
+  padding: 10px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #F3F4F6;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   5️⃣ HERO SECTION (Clean + Spacious)
+   ========================================================= */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 140px 100px 100px 100px;
+}
+
+.hero-left {
+  width: 50%;
+}
+
+.hero-left h1 {
+  font-size: 58px;
+  line-height: 1.15;
+  margin-bottom: 25px;
+  letter-spacing: -1.5px;
+}
+
+.hero-left p {
+  color: var(--text-muted);
+  margin-bottom: 35px;
+  font-size: 17px;
+}
+
+/* ✅ Space between Join & Find buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.hero-right {
+  width: 45%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-right img {
+  width: 90%;
+  max-width: 520px;
+}
+
+
+/* =========================================================
+   6️⃣ GRADIENT TEXT UTILITIES
+   ========================================================= */
+
+.gradient-purple {
+  background: linear-gradient(45deg, var(--primary), var(--primary-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-cyan {
+  background: linear-gradient(45deg, var(--cyan-soft), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   7️⃣ FEATURES SECTION (Glass Floating Cards)
+   ========================================================= */
+
+.features {
+  padding: 120px 100px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.feature-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  padding: 45px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid var(--border-soft);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  font-size: 26px;
+  background: linear-gradient(135deg, #DDD6FE, #C7D2FE);
+}
+
+
+/* =========================================================
+   8️⃣ STATS SECTION (Soft Gradient Container)
+   ========================================================= */
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 100px;
+  margin: 100px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #C4B5FD, #A5F3FC);
+  color: var(--text-main);
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-item p {
+  color: #4B5563;
+}
+
+
+/* =========================================================
+   9️⃣ FINAL CTA SECTION
+   ========================================================= */
+
+.final-cta {
+  padding: 120px 100px;
+  text-align: center;
+}
+
+.final-cta p {
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   🔟 FOOTER (Clean + Balanced)
+   ========================================================= */
+
+.footer {
+  padding: 100px 100px 40px 100px;
+  border-top: 1px solid #E5E7EB;
+  background: #F9FAFB;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer h3 {
+  color: var(--primary-deep);
+}
+
+.footer p {
+  color: var(--text-muted);
+  margin: 6px 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.footer p:hover {
+  color: var(--primary-deep);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  color: #9CA3AF;
+}
