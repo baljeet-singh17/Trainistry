@@ -21,6 +21,7 @@ function CompanyRegister() {
   };
 
   const handleSubmit = async (e) => {
+<<<<<<< HEAD
     e.preventDefault();
 
     try {
@@ -44,6 +45,26 @@ function CompanyRegister() {
       console.error(error);
       const message = error.response?.data?.message || "Registration failed";
       alert(message);
+=======
+    e.preventDefault(); // prevent refresh
+
+    try {
+      const res = await axios.post("/api/company", {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        industry: "General",
+        location: "India",
+        description: formData.companyName
+      });
+
+      localStorage.setItem("companyId", res.data.data._id);
+      navigate("/company-dashboard");
+
+    } catch (error) {
+      console.error(error);
+      alert("Registration failed");
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
     }
   };
 
@@ -107,5 +128,9 @@ function CompanyRegister() {
   );
 }
 
+<<<<<<< HEAD
 export default CompanyRegister;
 
+=======
+export default CompanyRegister;
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429

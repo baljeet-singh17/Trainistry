@@ -6,6 +6,7 @@ import AccountType from "./pages/auth/AccountType";
 import TrainerRegister from "./pages/auth/TrainerRegister";
 import CompanyRegister from "./pages/auth/CompanyRegister";
 import Login from "./pages/auth/Login";
+<<<<<<< HEAD
 
 // Admin
 import AdminDashboard from "./pages/admin/Dashboard";
@@ -27,18 +28,25 @@ import TrainerProfile from "./pages/trainer/Profile";
 import TrainerProjects from "./pages/trainer/Projects";
 import TrainerResumeUpload from "./pages/trainer/ResumeUpload";
 
+=======
+import CompanyDashboard from "./pages/company/CompanyDashboard";
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
 function App() {
   return (
     <Router>
       <Routes>
+<<<<<<< HEAD
 
         {/* Public Routes */}
+=======
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
         <Route path="/" element={<LandingPage />} />
         <Route path="/select-account" element={<AccountType />} />
         <Route path="/register-trainer" element={<TrainerRegister />} />
         <Route path="/register-company" element={<CompanyRegister />} />
         <Route path="/login" element={<Login />} />
 
+<<<<<<< HEAD
         {/* Admin Routes */}
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/projects" element={<AdminProjects />} />
@@ -59,6 +67,10 @@ function App() {
         <Route path="/trainer/projects" element={<TrainerProjects />} />
         <Route path="/trainer/resume-upload" element={<TrainerResumeUpload />} />
 
+=======
+        {/* ✅ ADD THIS ROUTE */}
+        <Route path="/company-dashboard" element={<CompanyDashboard />} />
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
       </Routes>
     </Router>
   );

@@ -21,6 +21,7 @@ function TrainerRegister() {
   };
 
   const handleSubmit = async (e) => {
+<<<<<<< HEAD
     e.preventDefault();
 
     try {
@@ -44,6 +45,24 @@ function TrainerRegister() {
       console.error(error);
       const message = error.response?.data?.message || "Registration failed";
       alert(message);
+=======
+    e.preventDefault(); // prevent page refresh
+
+    try {
+      const res = await axios.post("/api/trainer", {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        expertise: formData.expertise
+      });
+
+      localStorage.setItem("trainerId", res.data._id);
+      navigate("/trainer-dashboard");
+
+    } catch (error) {
+      console.error(error);
+      alert("Registration failed");
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
     }
   };
 
@@ -107,5 +126,9 @@ function TrainerRegister() {
   );
 }
 
+<<<<<<< HEAD
 export default TrainerRegister;
 
+=======
+export default TrainerRegister;
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429

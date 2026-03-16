@@ -11,8 +11,11 @@ function Login() {
     password: ""
   });
 
+<<<<<<< HEAD
   const [error, setError] = useState("");
 
+=======
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,6 +23,7 @@ function Login() {
     });
   };
 
+<<<<<<< HEAD
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -50,6 +54,26 @@ function Login() {
       const message = err.response?.data?.message || "Login failed. Please check your credentials.";
       setError(message);
       alert(message);
+=======
+  const handleSubmit = async () => {
+    try {
+      const res = await axios.get("/api/company");
+
+      const foundCompany = res.data.find(
+        (c) => c.email === formData.email
+      );
+
+      if (foundCompany) {
+        localStorage.setItem("companyId", foundCompany._id);
+        navigate("/company-dashboard");
+      } else {
+        alert("User not found");
+      }
+
+    } catch (error) {
+      console.error(error);
+      alert("Login failed");
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
     }
   };
 
@@ -59,6 +83,7 @@ function Login() {
 
         <h2>Welcome Back</h2>
 
+<<<<<<< HEAD
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -82,6 +107,26 @@ function Login() {
             Sign In
           </button>
         </form>
+=======
+        <input
+          name="email"
+          placeholder="Email Address"
+          className="input"
+          onChange={handleChange}
+        />
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="input"
+          onChange={handleChange}
+        />
+
+        <button className="btn-full" onClick={handleSubmit}>
+          Sign In
+        </button>
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
 
         <div className="demo-box">
           <h4>Demo Accounts</h4>
@@ -91,7 +136,11 @@ function Login() {
         </div>
 
         <p className="auth-footer">
+<<<<<<< HEAD
           Don't have an account?{" "}
+=======
+          Don’t have an account?{" "}
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
           <span onClick={() => navigate("/select-account")}>
             Sign up
           </span>
@@ -102,5 +151,9 @@ function Login() {
   );
 }
 
+<<<<<<< HEAD
 export default Login;
 
+=======
+export default Login;
+>>>>>>> e25889bd8e943885bb958141fbb1daf8bfc16429
