@@ -12,7 +12,10 @@ function LandingPage() {
       <nav className="navbar">
         <div className="logo">Trainistry</div>
         <div className="nav-actions">
-          <button className="login-btn">
+          <button
+            className="login-btn"
+            onClick={() => navigate("/login")}
+          >
             Login
           </button>
 
@@ -39,6 +42,21 @@ function LandingPage() {
             looking to upskill their workforce.
           </p>
 
+          {/* <div className="hero-buttons">
+            <button
+              className="primary-btn large"
+              onClick={() => navigate("/register-trainer")}
+            >
+              Join as a Trainer
+            </button>
+
+            <button
+              className="secondary-btn large"
+              onClick={() => navigate("/register-company")}
+            >
+              Find Trainers
+            </button>
+          </div> */}
           <div className="hero-buttons">
             <button
               className="primary-btn large"
@@ -58,7 +76,7 @@ function LandingPage() {
 
         <div className="hero-right">
           <img
-            src="https://illustrations.popsy.co/purple/man-working-on-laptop.svg"
+            src="https://static.vecteezy.com/system/resources/thumbnails/013/577/994/small_2x/starting-new-working-day-as-a-team-top-view-of-group-of-six-young-people-holding-hands-together-and-smile-while-sitting-at-the-office-desk-photo.jpg"
             alt="Hero Illustration"
           />
         </div>
