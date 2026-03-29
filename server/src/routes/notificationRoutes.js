@@ -1,11 +1,22 @@
-const express = require('express');
+
+const express = require("express");
 const router = express.Router();
-const { getCompanyNotifications, markAsRead } = require('../controllers/notificationController');
 
-// Get all unread notifications for a specific company
-router.get('/:companyId', getCompanyNotifications);
+const {
+  getTrainerNotifications,
+  getCompanyNotifications,
+  markAsRead
+} = require("../controllers/notificationController");
 
-// Mark a specific notification as seen
-router.put('/:id/read', markAsRead);
+const { protect } = require("../middleware/authMiddleware");
+
+// TRAINER
+router.get("/trainer", protect, getTrainerNotifications);
+
+// COMPANY
+router.get("/company", protect, getCompanyNotifications);
+
+// MARK READ
+router.put("/:id/read", protect, markAsRead);
 
 module.exports = router;

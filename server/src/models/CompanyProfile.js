@@ -1,33 +1,50 @@
+
 const mongoose = require('mongoose');
 
 const companyProfileSchema = new mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+
     name: {
       type: String,
-      required: [true, 'Company name is required'],
+      required: true,
       trim: true,
     },
-    email: {
-      type: String,
-      required: [true, 'Company email is required'],
-      unique: true,
-      lowercase: true,
-      trim: true,
-    },
+
     industry: {
       type: String,
-      required: [true, 'Industry is required'],
+      required: true,
       trim: true,
     },
+
     location: {
       type: String,
-      required: [true, 'Location is required'],
+      required: true,
       trim: true,
     },
+
     description: {
       type: String,
       default: '',
     },
+
+    // ======= NEW REPUTATION SYSTEM FIELDS =======
+    trustScore: { 
+      type: Number, 
+      default: 100, // Starts at 100%
+      min: 0,
+      max: 100 
+    },
+
+    isVerified: { 
+      type: Boolean, 
+      default: false 
+    },
+    // ============================================
   },
   { timestamps: true }
 );
